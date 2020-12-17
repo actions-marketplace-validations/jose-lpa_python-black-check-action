@@ -1,0 +1,24 @@
+# action.yml
+name: 'Python linters Black Check'
+description: 'GitHub action to run black checks on your python repository'
+branding:
+  icon: 'check-square'
+  color: 'black'
+inputs:
+  path:
+    description: 'File or directory to run black on.'
+    required: false
+    default: '.'
+  line-length:
+    description: 'Number of characters allowed per line on Black check.'
+    required: false
+    default: '100'
+outputs:
+  output:
+    description: 'The output of Black.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.line-length }}
+    - ${{ inputs.path }}
