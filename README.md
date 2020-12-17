@@ -1,4 +1,4 @@
-# Python BlackCheck action
+# Python Black check action
 
 GitHub Action for [black](https://github.com/psf/black)
 
